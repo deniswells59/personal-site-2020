@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { Github, LinkedIn } from '../../Icons';
+import { Github, LinkedIn } from '../../common/Icons';
 
 const iconStyles = `
   margin: 20px;

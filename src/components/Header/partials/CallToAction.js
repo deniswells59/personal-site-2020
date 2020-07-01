@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { Text } from '../../Text';
-import { DownArrow } from '../../Icons';
+import { Text } from '../../common/Text';
+import { DownArrow } from '../../common/Icons';
 
 const Wrapper = styled.div`
   text-align: center;

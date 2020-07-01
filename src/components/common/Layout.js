@@ -2,7 +2,7 @@ import React from 'react';
 import Helmet from 'react-helmet';
 
 import GlobalStyles from './GlobalStyles';
-import favicon from '../images/favicon.ico';
+import favicon from '../../images/favicon.ico';
 
 const Layout = () => (
   <>

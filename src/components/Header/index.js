@@ -1,7 +1,7 @@
 import React from 'react';
 
 import WallOfStars from '../WallOfStars';
-import { Title } from '../Text';
+import { Title } from '../common/Text';
 
 import Wrapper from './partials/Wrapper';
 import ContentWrapper from './partials/ContentWrapper';

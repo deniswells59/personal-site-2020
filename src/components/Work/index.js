@@ -1,25 +1,25 @@
 import React from 'react';
-import { StaticQuery, graphql } from 'gatsby';
+import { useStaticQuery, graphql } from 'gatsby';
 
 import WorkList from './WorkList';
 
-const Work = () => (
-  <StaticQuery
-    query={query}
-    render={data => <WorkList workExamples={data.allWorkJson.edges} />}
-  />
-);
+const Work = () => {
+  const data = useStaticQuery(workExamplesQuery);
+  const workData = data.allWorkJson.edges;
 
-const query = graphql`
-  query MyQuery {
+  return <WorkList workData={workData} />;
+};
+
+const workExamplesQuery = graphql`
+  query WorkExamplesQuery {
     allWorkJson {
       edges {
         node {
           id
           description
           githubLink
-          img1
-          img2
+          img1Name
+          img2Name
           link
           title
         }
