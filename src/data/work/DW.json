@@ -1,7 +1,7 @@
 {
   "title": "This site",
-  "img1Name": "dw_main.png",
-  "img2Name": "dw_other.png",
+  "primaryImage": "dw_main.png",
+  "secondaryImage": "dw_other.png",
   "githubLink": "https://github.com/deniswells59",
   "link": "http://deniswells.com",
   "description":

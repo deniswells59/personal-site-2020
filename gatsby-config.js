@@ -8,6 +8,8 @@ module.exports = {
         path: `${__dirname}/src/images/`,
       },
     },
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
     `gatsby-transformer-json`,
     {
       resolve: `gatsby-source-filesystem`,
@@ -16,8 +18,6 @@ module.exports = {
         path: `${__dirname}/src/data/`,
       },
     },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
