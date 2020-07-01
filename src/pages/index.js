@@ -1,13 +1,13 @@
-import React from 'react'
+import React from 'react';
 
-import SEO from '../components/SEO'
-import Logo from '../components/Logo'
+import SEO from '../components/SEO';
+import Header from '../components/Header';
 
 const IndexPage = () => (
   <>
     <SEO />
-    <Logo />
+    <Header />
   </>
-)
+);
 
-export default IndexPage
+export default IndexPage;

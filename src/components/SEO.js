@@ -1,7 +1,7 @@
-import React from 'react'
-import Helmet from 'react-helmet'
+import React from 'react';
+import Helmet from 'react-helmet';
 
-import favicon from '../images/favicon.ico'
+import favicon from '../images/favicon.ico';
 
 const SEO = () => (
   <Helmet>
@@ -17,6 +17,6 @@ const SEO = () => (
     <title>Denis Wells</title>
     <link rel="icon" href={favicon} />
   </Helmet>
-)
+);
 
-export default SEO
+export default SEO;

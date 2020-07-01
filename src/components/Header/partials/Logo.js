@@ -1,9 +1,9 @@
-import React from 'react'
-import styled, { keyframes } from 'styled-components'
+import React from 'react';
+import styled, { keyframes } from 'styled-components';
 
-const DASH_STROKE_DISTANCE = 600
-const ANIMATION_DURATION = 4
-const LETTER_COLOR = '#fcfcfc'
+const DASH_STROKE_DISTANCE = 600;
+const ANIMATION_DURATION = 4;
+const LETTER_COLOR = '#fcfcfc';
 
 const dash = keyframes`
  from {
@@ -12,7 +12,7 @@ const dash = keyframes`
   to {
     stroke-dashoffset: 0;
   }
-`
+`;
 
 const AnimatedPath = styled.path`
   stroke-width: 2;
@@ -21,11 +21,11 @@ const AnimatedPath = styled.path`
   stroke-dashoffset: ${DASH_STROKE_DISTANCE};
   animation: ${dash} ${ANIMATION_DURATION}s ease forwards;
   animation-delay: ${props => `${props.delay ?? 0}s`};
-`
+`;
 
 const StyledSVG = styled.svg`
   background-color: ${props => props.backgroundColor};
-`
+`;
 
 const Logo = ({ size = 50, backgroundColor = 'transparent' }) => {
   return (
@@ -45,7 +45,7 @@ const Logo = ({ size = 50, backgroundColor = 'transparent' }) => {
         d="M42.5,76.5 L45.3,83 L60,65 L74.7,83 L90,15"
       />
     </StyledSVG>
-  )
-}
+  );
+};
 
-export default Logo
+export default Logo;
