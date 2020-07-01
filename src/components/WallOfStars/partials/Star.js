@@ -1,10 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const StyledSVG = styled.svg`
+const StyledSVG = styled.svg.attrs(props => ({
+  style: {
+    top: `${props.top}px`,
+    left: `${props.left}px`,
+  },
+}))`
   position: absolute;
-  top: ${props => `${props.top}px`};
-  left: ${props => `${props.left}px`};
   opacity: ${props => props.opacity};
 `;
 

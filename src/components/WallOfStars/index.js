@@ -42,20 +42,7 @@ const WallOfStars = ({ starSize, starOpacity }) => {
       }
     }
 
-    const grid = gridPositions.map((positionObj, idx) => (
-      <>
-        {/* <GridSquare
-          key={`${positionObj.colPos}-${idx}`}
-          top={positionObj.top}
-          left={positionObj.left}
-          colWidth={colWidth}
-          rowHeight={rowHeight}
-        /> */}
-        {placeStar(positionObj)}
-      </>
-    ));
-
-    return grid;
+    return gridPositions;
   };
 
   const placeStar = posObj => {
@@ -77,7 +64,9 @@ const WallOfStars = ({ starSize, starOpacity }) => {
     return Math.floor(Math.random() * (max - min + 1) + min);
   };
 
-  return <>{createGrid()}</>;
+  const gridPositions = createGrid();
+
+  return <>{gridPositions.map(positionObj => placeStar(positionObj))}</>;
 };
 
 export default WallOfStars;
