@@ -1,12 +1,14 @@
 import React from 'react';
 
-import SEO from '../components/SEO';
+import Layout from '../components/Layout';
 import Header from '../components/Header';
+import NavSite from '../components/NavSite';
 
 const IndexPage = () => (
   <>
-    <SEO />
+    <Layout />
     <Header />
+    <NavSite />
   </>
 );
 

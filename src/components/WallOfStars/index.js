@@ -4,10 +4,11 @@ import React from 'react';
 import Star from './partials/Star';
 
 const NUMBER_OF_COLUMNS = 8;
-const NUMBER_OF_ROWS = 10;
+const NUMBER_OF_ROWS = 8;
 
+// GridSqaure used for development
 // const GridSquare = styled.div`
-//   border: ${process.env.NODE_ENV === 'development' && '1px solid black'};
+//   border: 1px solid black;
 //   position: absolute;
 //   width: ${props => props.colWidth}px;
 //   height: ${props => props.rowHeight}px;

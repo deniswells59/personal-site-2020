@@ -1,0 +1,9 @@
+{
+  "title": "This site",
+  "img1": "/images/DW/main.png",
+  "img2": "/images/DW/other.png",
+  "githubLink": "https://github.com/deniswells59",
+  "link": "http://deniswells.com",
+  "description":
+    "React, Webpack, Node + Express backend because I can. Explore, my dude."
+}
