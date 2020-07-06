@@ -19,7 +19,7 @@ const workExamplesQuery = graphql`
         node {
           id
           childImageSharp {
-            fluid(maxWidth: 1000) {
+            fluid(maxWidth: 800) {
               ...GatsbyImageSharpFluid
               originalName
             }
