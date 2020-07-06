@@ -1,9 +1,11 @@
 import React from 'react';
+import styled from 'styled-components';
 
 import { Title } from '../common/Text';
 
 import Wrapper from './partials/Wrapper';
 import Images from './partials/Images';
+import Description from './partials/Description';
 
 const WorkList = ({ workData, imageData }) => {
   const getImageFromName = imageName => {
@@ -23,11 +25,11 @@ const WorkList = ({ workData, imageData }) => {
 
         return (
           <div key={example.id}>
-            <h2>{example.title}</h2>
             <Images
               primaryImage={primaryImage}
               secondaryImage={secondaryImage}
             />
+            <Description title={example.title} />
           </div>
         );
       })}
