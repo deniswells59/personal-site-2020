@@ -30,7 +30,7 @@ const containerStyles = {
   position: 'relative',
 
   width: '100%',
-  'max-width': '600px',
+  maxWidth: '600px',
   height: '290px',
 
   boxShadow: '1px 1px 3px 0px rgba(0, 0, 0, 0.5)',

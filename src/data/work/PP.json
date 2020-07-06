@@ -1,0 +1,9 @@
+{
+  "title": "Pine + Palm",
+  "primaryImage": "pp_main.png",
+  "secondaryImage": "pp_other.png",
+  "githubLink": "https://github.com/deniswells59/pine-and-or-palm",
+  "link": "http://pineandorpalm.com",
+  "description":
+    "I created this for a local band in my hometown. We initially worked on an e-commerce store front, but canned it because the band didn't have enough merch to populate it. It's all still there if they want it or if you want it (please hire me..). I used React, Redux, and Headless Wordpress."
+}

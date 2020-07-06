@@ -1,52 +1,40 @@
 import React from 'react';
-import { useStaticQuery, graphql } from 'gatsby';
 
-import WorkList from './WorkList';
+import useWorkData from '../../hooks/useWorkData';
+
+import { Title } from '../common/Text';
+
+import Wrapper from './partials/Wrapper';
+import Item from './partials/Item';
 
 const Work = () => {
-  const data = useStaticQuery(workExamplesQuery);
-  const workData = data.allWorkJson.edges;
+  const [workData, imageData] = useWorkData();
+  const getImageFromName = imageName => {
+    const image = imageData.find(data => data.originalName === imageName);
 
-  const imageData = data.allFile.edges.map(({ node }) => {
-    return node.childImageSharp.fluid;
-  });
+    return image;
+  };
 
   return (
-    <>
-      <WorkList workData={workData} imageData={imageData} />
-    </>
+    <Wrapper>
+      <Title black bold>
+        LOOK WHAT I CAN DO!
+      </Title>
+      {workData.map(({ node: example }) => {
+        const primaryImage = getImageFromName(example.primaryImage);
+        const secondaryImage = getImageFromName(example.secondaryImage);
+
+        return (
+          <Item
+            key={example.id}
+            example={example}
+            primaryImage={primaryImage}
+            secondaryImage={secondaryImage}
+          />
+        );
+      })}
+    </Wrapper>
   );
 };
-
-const workExamplesQuery = graphql`
-  query WorkExamplesQuery {
-    allFile(filter: { extension: { regex: "/(jpg)|(jpeg)|(png)/" } }) {
-      edges {
-        node {
-          id
-          childImageSharp {
-            fluid(maxWidth: 1000) {
-              ...GatsbyImageSharpFluid
-              originalName
-            }
-          }
-        }
-      }
-    }
-    allWorkJson {
-      edges {
-        node {
-          id
-          description
-          githubLink
-          primaryImage
-          secondaryImage
-          link
-          title
-        }
-      }
-    }
-  }
-`;
 
 export default Work;

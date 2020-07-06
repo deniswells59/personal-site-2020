@@ -1,6 +1,14 @@
 import React from 'react';
+import styled from 'styled-components';
 
-import { Title } from '../../common/Text';
+import { Title, Text } from '../../common/Text';
+import { ExternalLink, Github } from '../../common/Icons';
+
+const LinkWrapper = styled.div`
+  width: 108px;
+  display: flex;
+  justify-content: space-between;
+`;
 
 const Description = ({
   title,
@@ -10,11 +18,22 @@ const Description = ({
   img1,
   img2,
 }) => (
-  <div>
-    <Title black bold>
+  <>
+    <Title black bold small>
       {title}
     </Title>
-  </div>
+
+    <LinkWrapper>
+      <a target="_blank" href={githubLink}>
+        <Github blue />
+      </a>
+      <a target="_blank" href={exampleLink}>
+        <ExternalLink blue />
+      </a>
+    </LinkWrapper>
+
+    <Text black>{description}</Text>
+  </>
 );
 
 export default Description;
