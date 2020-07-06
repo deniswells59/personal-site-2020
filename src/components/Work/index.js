@@ -23,7 +23,6 @@ const Work = () => {
 
   const checkIfSubNavShouldBeOn = () => {
     const { innerWidth } = window;
-    console.log('innerWidth:', innerWidth);
 
     if (innerWidth > 800) {
       setSubNavIsOn(true);
