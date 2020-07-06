@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 export const Text = styled.p`
   color: ${props => (props.black ? '#333' : '#fcfcfc')};
+  font-weight: ${props => (props.bold ? '800' : '400')};
   font-family: 'Lato', sans-serif;
   font-size: 14px;
 `;

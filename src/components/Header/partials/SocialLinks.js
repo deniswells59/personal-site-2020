@@ -17,12 +17,13 @@ const LinkedInIcon = styled(LinkedIn)`
 
 const SocialLinks = () => (
   <div>
-    <a href="https://github.com/deniswells59" target="_blank">
+    <a href="https://github.com/deniswells59" target="_blank" rel="noreferrer">
       <GithubIcon />
     </a>
     <a
       href="https://www.linkedin.com/in/denis-wells-426726119/"
       target="_blank"
+      rel="noreferrer"
     >
       <LinkedInIcon />
     </a>

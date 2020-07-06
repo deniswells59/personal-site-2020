@@ -1,14 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
+import styled from 'styled-components';
 
 import useWorkData from '../../hooks/useWorkData';
 
-import { Title } from '../common/Text';
-
-import Wrapper from './partials/Wrapper';
+import ItemListWrapper from './partials/ItemListWrapper';
+import SubNav from './partials/SubNav';
 import Item from './partials/Item';
 
+const Wrapper = styled.div`
+  display: flex;
+  margin-top: 24px;
+`;
+
 const Work = () => {
+  const [currentSubNavIndex, setCurrentSubNavIndex] = useState(0);
   const [workData, imageData] = useWorkData();
+
   const getImageFromName = imageName => {
     const image = imageData.find(data => data.originalName === imageName);
 
@@ -17,22 +24,28 @@ const Work = () => {
 
   return (
     <Wrapper>
-      <Title black bold>
-        LOOK WHAT I CAN DO!
-      </Title>
-      {workData.map(({ node: example }) => {
-        const primaryImage = getImageFromName(example.primaryImage);
-        const secondaryImage = getImageFromName(example.secondaryImage);
+      <SubNav
+        workData={workData}
+        currentSubNavIndex={currentSubNavIndex}
+        setCurrentSubNavIndex={setCurrentSubNavIndex}
+      />
 
-        return (
-          <Item
-            key={example.id}
-            example={example}
-            primaryImage={primaryImage}
-            secondaryImage={secondaryImage}
-          />
-        );
-      })}
+      <ItemListWrapper>
+        {workData.map(({ node: example }, idx) => {
+          const primaryImage = getImageFromName(example.primaryImage);
+          const secondaryImage = getImageFromName(example.secondaryImage);
+
+          return (
+            <Item
+              key={example.id}
+              visible={idx === currentSubNavIndex}
+              example={example}
+              primaryImage={primaryImage}
+              secondaryImage={secondaryImage}
+            />
+          );
+        })}
+      </ItemListWrapper>
     </Wrapper>
   );
 };

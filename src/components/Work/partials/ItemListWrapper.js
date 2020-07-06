@@ -3,7 +3,10 @@ import styled from 'styled-components';
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
-  padding: 3em 4em 6em 4em;
+  padding: 3em 4em 0em 4em;
+
+  width: 100%;
+
   min-height: 100vh;
   min-width: 400px;
   max-width: 1000px;

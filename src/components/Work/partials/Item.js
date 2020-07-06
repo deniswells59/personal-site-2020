@@ -6,10 +6,11 @@ import Description from './Description';
 
 const Wrapper = styled.div`
   margin: 4em 0em;
+  ${props => !props.visible && `display: none;`}
 `;
 
-const Item = ({ example, primaryImage, secondaryImage }) => (
-  <Wrapper>
+const Item = ({ visible, example, primaryImage, secondaryImage }) => (
+  <Wrapper visible={visible}>
     <Images primaryImage={primaryImage} secondaryImage={secondaryImage} />
     <Description
       title={example.title}

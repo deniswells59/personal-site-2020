@@ -10,24 +10,17 @@ const LinkWrapper = styled.div`
   justify-content: space-between;
 `;
 
-const Description = ({
-  title,
-  description,
-  githubLink,
-  exampleLink,
-  img1,
-  img2,
-}) => (
+const Description = ({ title, description, githubLink, exampleLink }) => (
   <>
     <Title black bold small>
       {title}
     </Title>
 
     <LinkWrapper>
-      <a target="_blank" href={githubLink}>
+      <a target="_blank" rel="noreferrer" href={githubLink}>
         <Github blue />
       </a>
-      <a target="_blank" href={exampleLink}>
+      <a target="_blank" rel="noreferrer" href={exampleLink}>
         <ExternalLink blue />
       </a>
     </LinkWrapper>
