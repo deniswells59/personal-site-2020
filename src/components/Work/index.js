@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 
 import useWorkData from '../../hooks/useWorkData';
@@ -14,7 +14,21 @@ const Wrapper = styled.div`
 
 const Work = () => {
   const [currentSubNavIndex, setCurrentSubNavIndex] = useState(0);
+  const [subNavIsOn, setSubNavIsOn] = useState(false);
   const [workData, imageData] = useWorkData();
+
+  useEffect(() => {
+    checkIfSubNavShouldBeOn();
+  });
+
+  const checkIfSubNavShouldBeOn = () => {
+    const { innerWidth } = window;
+    console.log('innerWidth:', innerWidth);
+
+    if (innerWidth > 800) {
+      setSubNavIsOn(true);
+    }
+  };
 
   const getImageFromName = imageName => {
     const image = imageData.find(data => data.originalName === imageName);
@@ -24,21 +38,25 @@ const Work = () => {
 
   return (
     <Wrapper>
-      <SubNav
-        workData={workData}
-        currentSubNavIndex={currentSubNavIndex}
-        setCurrentSubNavIndex={setCurrentSubNavIndex}
-      />
+      {subNavIsOn && (
+        <SubNav
+          workData={workData}
+          currentSubNavIndex={currentSubNavIndex}
+          setCurrentSubNavIndex={setCurrentSubNavIndex}
+        />
+      )}
 
       <ItemListWrapper>
         {workData.map(({ node: example }, idx) => {
           const primaryImage = getImageFromName(example.primaryImage);
           const secondaryImage = getImageFromName(example.secondaryImage);
 
+          const showItem = subNavIsOn ? currentSubNavIndex === idx : true;
+
           return (
             <Item
               key={example.id}
-              visible={idx === currentSubNavIndex}
+              visible={showItem}
               example={example}
               primaryImage={primaryImage}
               secondaryImage={secondaryImage}

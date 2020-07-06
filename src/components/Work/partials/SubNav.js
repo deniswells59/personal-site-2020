@@ -57,7 +57,7 @@ const SubNav = ({ workData, currentSubNavIndex, setCurrentSubNavIndex }) => (
 
     <ListWrapper>
       {workData.map(({ node: example }, idx) => (
-        <ItemWrapper>
+        <ItemWrapper key={example.id}>
           <Button onClick={() => setCurrentSubNavIndex(idx)}>
             <ButtonText black bold selected={idx === currentSubNavIndex}>
               {example.title}
