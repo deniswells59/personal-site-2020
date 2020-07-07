@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 
 import About from '../About';
 import Work from '../Work';
+import Contact from '../Contact';
 
 import Nav from './partials/Nav';
 
@@ -17,6 +18,9 @@ const NAV_OPTIONS = {
   },
   [NAV_TYPES.WORK]: {
     Component: Work,
+  },
+  [NAV_TYPES.CONTACT]: {
+    Component: Contact,
   },
 };
 
