@@ -9,10 +9,10 @@ const NavBar = styled.div`
 
   width: 60%;
   padding: 16px;
-  margin: auto;
+  margin-left: auto;
+  margin-right: auto;
 
   @media (max-width: 768px) {
-    width: auto;
     padding: 16px 32px;
   }
 `;

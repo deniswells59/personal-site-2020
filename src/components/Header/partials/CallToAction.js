@@ -6,13 +6,20 @@ import { DownArrow } from '../../common/Icons';
 
 const Wrapper = styled.div`
   text-align: center;
+`;
+
+const DownArrowStyle = styled(DownArrow)`
+  font-size: 32px;
+`;
+
+const ActionText = styled(Text)`
   font-size: 12px;
 `;
 
 const CallToAction = () => (
   <Wrapper>
-    <Text>THERE'S PROOF DOWN HERE</Text>
-    <DownArrow />
+    <ActionText>THERE'S PROOF DOWN HERE</ActionText>
+    <DownArrowStyle />
   </Wrapper>
 );
 

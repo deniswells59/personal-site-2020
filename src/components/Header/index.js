@@ -1,4 +1,5 @@
 import React from 'react';
+import styled from 'styled-components';
 
 import WallOfStars from '../WallOfStars';
 import { Title } from '../common/Text';
@@ -10,6 +11,10 @@ import Divider from './partials/Divider';
 import SocialLinks from './partials/SocialLinks';
 import CallToAction from './partials/CallToAction';
 
+const HeaderTitle = styled(Title)`
+  font-size: 14px;
+`;
+
 const Header = () => (
   <Wrapper>
     <WallOfStars starSize={2} starOpacity={0.4} />
@@ -20,7 +25,7 @@ const Header = () => (
       <div>
         <Logo size="100" />
 
-        <Title>Hi, I'm a Web Developer</Title>
+        <HeaderTitle>Hi, I'm a Web Developer</HeaderTitle>
 
         <Divider />
 

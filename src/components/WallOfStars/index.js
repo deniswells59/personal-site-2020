@@ -3,8 +3,8 @@ import React from 'react';
 
 import Star from './partials/Star';
 
-const NUMBER_OF_COLUMNS = 8;
-const NUMBER_OF_ROWS = 8;
+const NUMBER_OF_COLUMNS = 6;
+const NUMBER_OF_ROWS = 6;
 
 // GridSqaure used for development
 // const GridSquare = styled.div`
