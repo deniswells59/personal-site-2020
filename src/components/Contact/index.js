@@ -25,7 +25,7 @@ const Link = styled.a`
 
 const Contact = () => (
   <Wrapper>
-    <Title black bold>
+    <Title center black bold>
       ASK ABOUT A PROJECT! GET TO KNOW ME! SEND ME SPAM!
     </Title>
     <Content>

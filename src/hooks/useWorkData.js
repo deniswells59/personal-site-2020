@@ -9,7 +9,16 @@ const useWorkData = () => {
     return node.childImageSharp.fluid;
   });
 
-  return [workData, imageData];
+  const orderedWorkData = workData.sort((a, b) => {
+    const orderA = a.order;
+    const orderB = b.order;
+
+    if (orderA < orderB) return -1;
+    if (orderA > orderB) return 1;
+    return 0;
+  });
+
+  return [orderedWorkData, imageData];
 };
 
 const workExamplesQuery = graphql`

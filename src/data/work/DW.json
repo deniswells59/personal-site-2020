@@ -1,8 +1,9 @@
 {
+  "order": 2,
   "title": "This site",
   "primaryImage": "dw_main.png",
   "secondaryImage": "dw_other.png",
-  "githubLink": "https://github.com/deniswells59",
+  "githubLink": "https://github.com/deniswells59/personal-site-2020",
   "link": "http://deniswells.com",
   "description":
     "React, Webpack, Node + Express backend because I can. Explore, my dude."

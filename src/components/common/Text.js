@@ -10,6 +10,8 @@ export const Text = styled.p`
 export const Title = styled.p`
   color: ${props => (props.black ? '#333' : '#fcfcfc')};
   font-weight: ${props => (props.bold ? '800' : '400')};
+  text-align: ${props => (props.center ? 'center' : 'left')};
+
   letter-spacing: 1px;
   font-family: 'Dosis', sans-serif;
   font-size: 22px;
