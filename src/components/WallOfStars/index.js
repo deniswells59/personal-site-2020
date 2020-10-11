@@ -19,8 +19,8 @@ const NUMBER_OF_ROWS = 6;
 const WallOfStars = ({ starSize, starOpacity }) => {
   const createGrid = () => {
     // Screen's width and height
-    const width = window.innerWidth;
-    const height = window.innerHeight;
+    const width = typeof window !== 'undefined' && window.innerWidth;
+    const height = typeof window !== 'undefined' && window.innerHeight;
 
     // Dynamic grid size based on size of screen
     // This means wide monitors will get a less dense starry night

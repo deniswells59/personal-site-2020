@@ -22,7 +22,7 @@ const Work = () => {
   });
 
   const checkIfSubNavShouldBeOn = () => {
-    const { innerWidth } = window;
+    const innerWidth = typeof window !== 'undefined' && window.innerWidth;
 
     if (innerWidth > 800) {
       setSubNavIsOn(true);
