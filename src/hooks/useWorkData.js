@@ -40,6 +40,7 @@ const workExamplesQuery = graphql`
       edges {
         node {
           id
+          order
           description
           githubLink
           primaryImage

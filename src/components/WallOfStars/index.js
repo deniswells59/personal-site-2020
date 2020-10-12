@@ -3,6 +3,8 @@ import React from 'react';
 
 import Star from './partials/Star';
 
+import { useWindowSize } from '../../providers/useWindowSize';
+
 const NUMBER_OF_COLUMNS = 6;
 const NUMBER_OF_ROWS = 6;
 
@@ -17,10 +19,12 @@ const NUMBER_OF_ROWS = 6;
 // `;
 
 const WallOfStars = ({ starSize, starOpacity }) => {
+  const windowSizes = useWindowSize();
+
   const createGrid = () => {
     // Screen's width and height
-    const width = typeof window !== 'undefined' && window.innerWidth;
-    const height = typeof window !== 'undefined' && window.innerHeight;
+    const width = windowSizes.innerWidth;
+    const height = windowSizes.innerHeight;
 
     // Dynamic grid size based on size of screen
     // This means wide monitors will get a less dense starry night
@@ -46,13 +50,13 @@ const WallOfStars = ({ starSize, starOpacity }) => {
     return gridPositions;
   };
 
-  const placeStar = posObj => {
+  const placeStar = (posObj, idx) => {
     const randomTop = randomIntFromInterval(posObj.top, posObj.bottom);
     const randomLeft = randomIntFromInterval(posObj.left, posObj.right);
 
     return (
       <Star
-        key={`${posObj.top}-${posObj.left}`}
+        key={`${posObj.top}-${posObj.left}-${idx}`}
         top={randomTop}
         left={randomLeft}
         size={starSize}
@@ -67,7 +71,7 @@ const WallOfStars = ({ starSize, starOpacity }) => {
 
   const gridPositions = createGrid();
 
-  return <>{gridPositions.map(positionObj => placeStar(positionObj))}</>;
+  return <>{gridPositions.map(placeStar)}</>;
 };
 
 export default WallOfStars;

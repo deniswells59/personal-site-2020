@@ -30,17 +30,3 @@ const Description = ({ title, description, githubLink, exampleLink }) => (
 );
 
 export default Description;
-
-{
-  /* div className="work-links">
-        <a target="_blank" href={githubLink} className="work-href">
-          <i className="icon-social-github icons"></i>
-        </a>
-        <a target="_blank" href={exampleLink} className="work-href">
-          <i className="icon-link icons"></i>
-        </a>
-      </div>
-    </div>
-
-    <p className="work-desc">{description}</p> */
-}

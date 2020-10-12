@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 
 import useWorkData from '../../hooks/useWorkData';
+import { useWindowSize } from '../../providers/useWindowSize';
 
 import ItemListWrapper from './partials/ItemListWrapper';
 import SubNav from './partials/SubNav';
@@ -15,14 +16,16 @@ const Wrapper = styled.div`
 const Work = () => {
   const [currentSubNavIndex, setCurrentSubNavIndex] = useState(0);
   const [subNavIsOn, setSubNavIsOn] = useState(false);
+
   const [workData, imageData] = useWorkData();
+  const windowSizes = useWindowSize();
 
   useEffect(() => {
     checkIfSubNavShouldBeOn();
   });
 
   const checkIfSubNavShouldBeOn = () => {
-    const innerWidth = typeof window !== 'undefined' && window.innerWidth;
+    const innerWidth = { windowSizes };
 
     if (innerWidth > 800) {
       setSubNavIsOn(true);
