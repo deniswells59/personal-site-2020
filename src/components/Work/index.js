@@ -22,10 +22,10 @@ const Work = () => {
 
   useEffect(() => {
     checkIfSubNavShouldBeOn();
-  });
+  }, [windowSizes]);
 
   const checkIfSubNavShouldBeOn = () => {
-    const innerWidth = { windowSizes };
+    const { innerWidth } = windowSizes;
 
     if (innerWidth > 800) {
       setSubNavIsOn(true);

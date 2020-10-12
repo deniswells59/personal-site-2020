@@ -10,8 +10,8 @@ const useWorkData = () => {
   });
 
   const orderedWorkData = workData.sort((a, b) => {
-    const orderA = a.order;
-    const orderB = b.order;
+    const orderA = a.node.order;
+    const orderB = b.node.order;
 
     if (orderA < orderB) return -1;
     if (orderA > orderB) return 1;
